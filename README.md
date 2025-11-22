@@ -9,7 +9,7 @@ Interactive data visualizations and analysis of the November 2025 House Oversigh
 ## Contents
 
 ### Visualizations
-- **Embedding Cluster Map** - UMAP projection of 10,000 document embeddings showing semantic clusters
+- **Embedding Cluster Map** - UMAP projection of all 69,290 document embeddings showing semantic clusters
 - **Network Graph** - Co-occurrence network of 31 named entities with 110 connections
 - **Document Distribution** - Breakdown by document type and volume
 
