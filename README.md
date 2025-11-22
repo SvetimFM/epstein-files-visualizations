@@ -4,7 +4,7 @@ Interactive data visualizations and analysis of the November 2025 House Oversigh
 
 ## Live Demo
 
-**[View Visualizations](https://boxesblue.github.io/epstein-files-visualizations/)**
+**[View Visualizations](https://svetimfm.github.io/epstein-files-visualizations/)**
 
 ## Contents
 
