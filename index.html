@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epstein Files Visualizations</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #f5f5f5;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #2980b9;
+        }
+        .card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .card a {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: background 0.2s;
+        }
+        .card a:hover {
+            background: #2980b9;
+        }
+        .stats {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .stats h2 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+        .stat {
+            text-align: center;
+            padding: 1rem;
+            background: #ecf0f1;
+            border-radius: 5px;
+        }
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #3498db;
+        }
+        .stat-label {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        .info {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+        .links {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .links h2 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .links a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Epstein Files Visualizations</h1>
+    <p class="subtitle">Interactive data visualizations from the November 2025 House Oversight Committee document release</p>
+
+    <div class="stats">
+        <h2>Dataset Statistics</h2>
+        <div class="stat-grid">
+            <div class="stat">
+                <div class="stat-value">69,290</div>
+                <div class="stat-label">Document Chunks</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">31</div>
+                <div class="stat-label">Named Entities</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">110</div>
+                <div class="stat-label">Connections</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">768</div>
+                <div class="stat-label">Embedding Dimensions</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="info">
+        <strong>Note:</strong> These visualizations are generated from OCR'd documents. Some are verified law enforcement records; others are Epstein's own promotional materials. Cross-reference all findings with independent sources.
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Embedding Cluster Map</h3>
+            <p>UMAP dimensionality reduction of 10,000 sampled document embeddings. Shows semantic similarity between documents - similar topics cluster together.</p>
+            <p><strong>Colors:</strong> Red = IMAGES, Teal = TEXT</p>
+            <a href="epstein_embedding_clusters.html">View Visualization</a>
+        </div>
+
+        <div class="card">
+            <h3>Network Graph</h3>
+            <p>Co-occurrence network of names in documents. Node size indicates mention frequency. Edges show which names appear together in the same documents.</p>
+            <p><strong>Hover</strong> over nodes to see mention counts.</p>
+            <a href="epstein_network_graph.html">View Visualization</a>
+        </div>
+
+        <div class="card">
+            <h3>Document Distribution</h3>
+            <p>Breakdown of documents by type (IMAGES vs TEXT) and volume. Shows the composition of the 69,290 document chunks.</p>
+            <p><strong>TEXT-001</strong> = 44.7% of all chunks (legal documents)</p>
+            <a href="epstein_doc_distribution.html">View Visualization</a>
+        </div>
+    </div>
+
+    <div class="links">
+        <h2>Resources</h2>
+        <ul>
+            <li><a href="EPSTEIN_FILES_RAG_MINING_REPORT.md"><strong>RAG Mining Report</strong></a> - Full findings with fact-checking and source citations</li>
+            <li><a href="https://huggingface.co/datasets/BoxesBlue/epstein-files-nov11-25-house-post-ocr-embeddings">HuggingFace Dataset</a> - Full embeddings (69,290 vectors, 768-dim)</li>
+            <li><a href="https://huggingface.co/datasets/tensonaut/EPSTEIN_FILES_20K">Source Dataset</a> - Original OCR'd documents</li>
+            <li><a href="EPSTEIN_VISUALIZATIONS_SUMMARY.md">Visualization Summary</a> - Statistics and methodology</li>
+            <li><a href="epstein_visualizations.py">Source Code</a> - Python script used to generate visualizations</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>Generated November 2025 | Data from House Oversight Committee Epstein Document Release</p>
+        <p>Embeddings: Ollama nomic-embed-text (768-dim) | Visualization: UMAP + Plotly</p>
+    </footer>
+</body>
+</html>
